@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular</title>
+    <link rel="icon" href="https://angularjs.org/favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js" charset="utf-8"></script>
+    <script src="js/angular-animate.min.js" charset="utf-8"></script>
+    <script src="js/angular-route.min.js" charset="utf-8"></script>
+    <!-- <script src="js/app.js" charset="utf-8"></script> -->
+    <script src="js/controller.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  </head>
+  <body>
+    <!-- Banner -->
+    <div class="container-fluid">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-2">An Angular product</h1>
+          <p class="lead">powered by Google</p>
+          <a href="https://docs.angularjs.org/api" target="blank">Get help</a>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <h1>Top 4 recommended courses</h1>
+      </div>
+      <div class=""  ng-controller="CourseList">
+        <div class="row">
+          <form class="form-inline">
+            <label for="filterBy" class="">Sort by: &nbsp;</label>
+            <select class="form-control" id="filterBy" ng-model="filterValue">
+              <option value="coursename">Course name</option>
+              <option value="category">Category</option>
+            </select>
+
+            <label for="filterBy" class="">Display: &nbsp;</label>
+            <select class="form-control" id="filterBy" ng-model="displayValue">
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="">All</option>
+            </select>
+          </form>
+        </div>
+        <br>
+
+        <div class="row">
+          <div class="col-md-3" ng-repeat="course in courses | limitTo : displayValue | filter:true | orderBy:filterValue">
+            <div class="card" style="margin-bottom:10px;height:435px">
+              <img class="card-img-top" src="images/courseimage.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h4 class="card-title">{{course.coursename}}</h4>
+                <p class="card-text">{{course.category}}.</p>
+                <a href="#" class="btn btn-info">Access course</a>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Author: Duy Nguyen</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+</html>
