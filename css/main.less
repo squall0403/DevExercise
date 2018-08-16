@@ -1,0 +1,87 @@
+
+.font-size(@sizeValue){
+  @pxValue: @sizeValue;
+  @remValue: (@sizeValue / 14); /* Divide desired pixel value by base font size */
+  font-size: ~"@{pxValue}px";
+  font-size: ~"@{remValue}rem";
+}
+
+.padding(@sizeValue){
+  @pxValue: @sizeValue;
+  @remValue: (@sizeValue / 16); /* Divide desired pixel value by base font size */
+  padding: ~"@{pxValue}px";
+  padding: ~"@{remValue}rem";
+}
+
+.padding-left(@sizeValue){
+  @pxValue: @sizeValue;
+  @remValue: (@sizeValue / 16); /* Divide desired pixel value by base font size */
+  padding-left: ~"@{pxValue}px";
+  padding-left: ~"@{remValue}rem";
+}
+
+.padding-right(@sizeValue){
+  @pxValue: @sizeValue;
+  @remValue: (@sizeValue / 16); /* Divide desired pixel value by base font size */
+  padding-right: ~"@{pxValue}px";
+  padding-right: ~"@{remValue}rem";
+}
+
+.margin(@sizeValue){
+  @pxValue: @sizeValue;
+  @remValue: (@sizeValue / 16); /* Divide desired pixel value by base font size */
+  margin: ~"@{pxValue}px";
+  margin: ~"@{remValue}rem";
+}
+
+.margin-left(@sizeValue){
+  @pxValue: @sizeValue;
+  @remValue: (@sizeValue / 16); /* Divide desired pixel value by base font size */
+  margin-left: ~"@{pxValue}px";
+  margin-left: ~"@{remValue}rem";
+}
+
+.margin-right(@sizeValue){
+  @pxValue: @sizeValue;
+  @remValue: (@sizeValue / 16); /* Divide desired pixel value by base font size */
+  margin-right: ~"@{pxValue}px";
+  margin-right: ~"@{remValue}rem";
+}
+
+.width(@sizeValue){
+  @pxValue: @sizeValue;
+  @remValue: (@sizeValue / 16); /* Divide desired pixel value by base font size */
+  width: ~"@{pxValue}px";
+  width: ~"@{remValue}rem";
+}
+
+html{
+  font-family: 'Roboto', sans-serif;
+}
+
+body{
+  margin: 0px;
+  background-color: lighten(@light-grey, 90%);
+}
+
+.btn{
+  border-radius: 2px;
+  border: 0px;
+  padding: 8.5px 30px;
+  margin: 16px 0px;
+  .width(170);
+  transition: ease-in 0.2s;
+}
+
+.btn:hover{
+  cursor: pointer;
+}
+.primary{
+  background: @green-blue;
+  color: white;
+  .font-size(11);
+}
+
+.primary:hover{
+  background: lighten(@green-blue,5%);
+}
